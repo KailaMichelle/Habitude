@@ -27,7 +27,7 @@ class SignUp extends Component {
             .catch((err) => {
                 console.log(err.response.status);
                 console.log(err.response.data);
-                console.log(err.response.data.message);
+                console.log(`Err.response.data.message: ${err.response.data.message}`);
                 this.setState({error: err.response.data.message});
             });
         }
@@ -50,7 +50,7 @@ class SignUp extends Component {
                             <input onChange={this.handleChange} type="password" id="password" name="password" value={this.state.password} />
                         </div>
                         <p className="error">{this.state.error}</p>
-                        <div class="submit-btn">
+                        <div className="submit-btn">
                             <button type="submit">Sign Up</button>
                         </div>
                         </form>

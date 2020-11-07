@@ -1,4 +1,4 @@
-const url = `http://localhost:4000/api/user`
+const url = `http://localhost:5000/api/user`
 // const url = process.env.REACT_APP_API
 
 class UserModel {

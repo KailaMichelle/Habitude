@@ -19,7 +19,7 @@ class Login extends Component {
         e.preventDefault();
         axios.post(`${process.env.REACT_APP_API}/api/auth/login`, this.state)
             .then((res) => {
-                console.log(res);
+                console.log(`Login res: ${JSON.stringify(res)}`);
                 this.props.setCurrentUser(res.data.token);
                 this.props.history.push('/');
             })
@@ -45,7 +45,7 @@ class Login extends Component {
                     <input onChange={this.handleChange} type="password" id="password" name="password" value={this.state.password} />
                 </div>
                 <p className="error">{this.state.error}</p>
-                <div class="submit-btn">
+                <div className="submit-btn">
                     <button type="submit">Login</button>
                 </div>
                 </form>
