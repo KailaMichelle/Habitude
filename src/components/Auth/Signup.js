@@ -18,7 +18,7 @@ class SignUp extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/api/auth/signup`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/auth/signup`, this.state)
             .then((res) => {
                 console.log(res);
                 this.props.setCurrentUser(res.data.token);

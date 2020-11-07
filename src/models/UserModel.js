@@ -1,5 +1,5 @@
-const url = `http://localhost:5000/api/user`
-// const url = process.env.REACT_APP_API
+const url = `http://localhost:5000/api/users`
+// const url = {process.env.REACT_APP_API/applicationCache/user}
 
 class UserModel {
 
