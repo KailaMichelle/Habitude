@@ -17,7 +17,8 @@ class App extends Component {
     if(token){
       setAuthHeader(token);
       const decodedToken = jwt_decode(token);
-      this.setState({currentUser: decodedToken.id})
+      this.setState({currentUser: decodedToken})
+      // console.log(`This is current user #1 from App.js: ${JSON.stringify(this.state.currentUser)}`)
     }
   }
   
@@ -36,6 +37,7 @@ class App extends Component {
   }
 
   render(){
+    console.log(`This is current user from App.js: ${JSON.stringify(this.state.currentUser)}`)
     return (
       <React.Fragment>
         <NavBar currentUser={this.state.currentUser} logout={this.logout}/>

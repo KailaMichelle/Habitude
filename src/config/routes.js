@@ -3,7 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import HomeContainer from '../containers/HomeContainer';
 import Login from '../components/Auth/Login';
 import Signup from '../components/Auth/Signup';
-import Profile from '../components/Profile'
+// import Profile from '../components/Profile'
+import UserContainer from '../containers/UserContainer';
 
 export default({ currentUser, setCurrentUser }) => (
     <Switch>
@@ -19,7 +20,13 @@ export default({ currentUser, setCurrentUser }) => (
             <Profile setCurrentUser={setCurrentUser} currentUser={currentUser} />
         }
         /> */}
-        <Route path='/api/users/:id' render={() => <Profile setCurrentUser={setCurrentUser} currentUser={currentUser}/> } />
+        <Route path='/api/users/:id' render={() =>
+        <UserContainer currentUser={currentUser}/>
+        } />
+        
+        {/* <Route path='/api/users/:id' component={<Profile />}
+        /> */}
+
 
     </Switch>
 )
