@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class SignUp extends Component {
     state = {
-        username:'',
+        name:'',
         email:'',
         password:'',
         error: '',
@@ -18,7 +18,7 @@ class SignUp extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/user/signup`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/api/auth/signup`, this.state)
             .then((res) => {
                 console.log(res);
                 this.props.setCurrentUser(res.data.token);
@@ -37,9 +37,9 @@ class SignUp extends Component {
                     <div>
                         <h3>Sign Up</h3>
                         <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="name">Name</label>
                         <div>
-                            <input onChange={this.handleChange} type="username" id="username" name="username" value={this.state.username}/>
+                            <input onChange={this.handleChange} type="name" id="name" name="name" value={this.state.username}/>
                         </div>
                         <label htmlFor="email">Email</label>
                         <div>

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-import './Auth.css'
-
 class Login extends Component {
     state = {
         email:'',
@@ -19,7 +17,7 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/user/login`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/api/auth/login`, this.state)
             .then((res) => {
                 console.log(res);
                 this.props.setCurrentUser(res.data.token);
