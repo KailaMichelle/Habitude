@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import Routes from './config/routes';
+import NavBar from './components/NavBar';
 import setAuthHeader from './utils/setAuthHeader';
 
 import './App.css';
@@ -37,6 +38,7 @@ class App extends Component {
   render(){
     return (
       <React.Fragment>
+        <NavBar currentUser={this.state.currentUser} logout={this.logout}/>
         <div className="App">
           <header className="App-header">
             <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>

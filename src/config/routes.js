@@ -15,10 +15,11 @@ export default({ currentUser, setCurrentUser }) => (
         <Route path='/signup' render={() => <Signup setCurrentUser={setCurrentUser}/> } />
 
         {/* Profile */}
-        <Route path='/users/:id' render={() =>
+        {/* <Route path='/users/:id' render={() =>
             <Profile setCurrentUser={setCurrentUser} currentUser={currentUser} />
         }
-        />
+        /> */}
+        <Route path='/api/users/:id' render={() => <Profile setCurrentUser={setCurrentUser} currentUser={currentUser}/> } />
 
     </Switch>
 )
