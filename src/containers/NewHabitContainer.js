@@ -22,7 +22,7 @@ class NewHabitContainer extends React.Component {
     HabitModel.createHabit(this.state)
       .then((result) => {
       });
-    this.props.history.push('/habits');
+    this.props.history.push('/');
   }
 
   toggle = () => {

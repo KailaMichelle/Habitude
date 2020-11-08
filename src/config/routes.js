@@ -23,14 +23,14 @@ export default({ currentUser, setCurrentUser }) => (
         <UserContainer currentUser={currentUser}/>
         } />
 
-        {/* Habit Show Page */}
-        <Route path='/habits/:id' render = {props => <Habit {...props} currentUser={currentUser} />}  />
         {/* Add New Habit */}
         <Route path='/habits/new' render={() => 
             <NewHabitContainer currentUser={currentUser}/>} 
             />
         {/* Edit Habit */}
         <Route path='/habits/:id/edit' component={EditHabitForm} />
+        {/* Habit Show Page */}
+        <Route path='/habits/:id' render = {props => <Habit {...props} currentUser={currentUser} />}  />
 
 
     </Switch>
