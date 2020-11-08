@@ -22,7 +22,7 @@ class NewHabitContainer extends React.Component {
     HabitModel.createHabit(this.state)
       .then((result) => {
       });
-    this.props.history.push('/');
+    this.props.history.push('/habits');
   }
 
   toggle = () => {
@@ -32,13 +32,13 @@ class NewHabitContainer extends React.Component {
   }
   
   render() {
-      console.log(`Props from new habit: ${this.props}`)
+      console.log(`Props from new habit: ${JSON.stringify(this.props)}`)
     return (
         <div className="new-ev">
             <div className="new-wrapper">
                 <div className="new-habit">
                     <form onSubmit={this.handleSubmit}>
-                        <h2 className="new-name"  >Add A New Habit</h2>
+                        <h2 className="new-name">Add A New Habit</h2>
 
                         <div className="field">
                             <label className="new-name" htmlFor="">Habit:</label>

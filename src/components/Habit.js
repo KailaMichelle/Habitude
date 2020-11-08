@@ -12,11 +12,16 @@ class Habit extends Component {
   };
 
   render() {
-    const { habit, list } = this.props;
+    const habit = this.props;
 
       return (
-          <div className="hike-wrapper">
-              HABIT
+          <div className="habit-wrapper">
+              <h2 className="habit-name"><strong>Habit: </strong>{habit.name}</h2>
+
+              <section className="alter-buttons">
+                  <Link to={`/habits/${habit._id}/edit`}><button>Edit</button></Link>
+                  <button onClick={this.deleteClickedHabit}>Delete</button>
+                </section>
           </div> 
       );
   }

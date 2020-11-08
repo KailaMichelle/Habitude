@@ -16,6 +16,7 @@ class HabitsListContainer extends React.Component {
   };
 
   render() {
+      console.log(`this.props.currentUser from habits list container: ${JSON.stringify(this.props)}`)
     return <HabitsList habits={this.state.habits} deletedHabit={this.deletedHabit} currentUser={this.props.currentUser}/>;
   };
 }

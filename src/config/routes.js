@@ -6,6 +6,8 @@ import Signup from '../components/Auth/Signup';
 // import Profile from '../components/Profile'
 import UserContainer from '../containers/UserContainer';
 import NewHabitContainer from '../containers/NewHabitContainer';
+import Habit from '../components/Habit';
+import EditHabitForm from '../components/EditHabitForm';
 
 export default({ currentUser, setCurrentUser }) => (
     <Switch>
@@ -20,13 +22,15 @@ export default({ currentUser, setCurrentUser }) => (
         <Route path='/api/users/:id' render={() =>
         <UserContainer currentUser={currentUser}/>
         } />
-        
+
+        {/* Habit Show Page */}
+        <Route path='/habits/:id' render = {props => <Habit {...props} currentUser={currentUser} />}  />
         {/* Add New Habit */}
         <Route path='/habits/new' render={() => 
             <NewHabitContainer currentUser={currentUser}/>} 
             />
         {/* Edit Habit */}
-        {/* <Route path='/habits/:id/edit' component={EditHabitForm} /> */}
+        <Route path='/habits/:id/edit' component={EditHabitForm} />
 
 
     </Switch>

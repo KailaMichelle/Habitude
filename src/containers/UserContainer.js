@@ -41,14 +41,13 @@ class UserContainer extends Component{
 //   }
 
   render () {
-      console.log(`this.props.current : ${JSON.stringify(this.props.currentUser)}`)
+      console.log(`this.props.current user from usercontainer : ${JSON.stringify(this.props.currentUser)}`)
       console.log(`this.state.user from user container: ${JSON.stringify(this.state.user)}`)
 
     return (
         <div>
-            Success
             <Profile currentUser={this.state.user}/>
-            <HabitsListContainer currentUser={this.state.user} />
+            {/* <HabitsListContainer currentUser={this.state.user} /> */}
         </div>
 
     )
