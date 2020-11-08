@@ -22,6 +22,7 @@ class NewHabitContainer extends React.Component {
     HabitModel.createHabit(this.state)
       .then((result) => {
       });
+      console.log(`this.state in new: ${JSON.stringify(this.state)}`)
     this.props.history.push('/');
   }
 
