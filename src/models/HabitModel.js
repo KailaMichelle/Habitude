@@ -1,20 +1,20 @@
-const url = `http://localhost:4000/habits`
+const url = `http://localhost:5000/api/users`
 // const url = process.env.REACT_APP_API
 
 class HabitModel {
-    static getAllHabits = () => {
-        return fetch(url)
+    static getAllHabits = (userId) => {
+        return fetch(`${url}/${userId}`)
             .then((response) => response.json())
     }
 
-    static getHabitById = (habitId) => {
-        return fetch(`${url}/${habitId}`)
+    static getHabitById = (habitId, userId) => {
+        return fetch(`${url}/${userId}/${habitId}`)
             .then((response) => response.json())
     }
 
-    static createHabit = (habit) => {
+    static createHabit = (habit, userId) => {
         const token = localStorage.getItem('token');
-        return fetch(url, {
+        return fetch(`${url}/${userId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,9 +25,9 @@ class HabitModel {
             .then((response) => response.json())
     }
 
-    static updateHabit = (habit, id) => {
+    static updateHabit = (habit, habitId, userId) => {
         const token = localStorage.getItem('token');
-        return fetch(`${url}/${id}`, {
+        return fetch(`${url}/${userId}/${habitId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -39,9 +39,9 @@ class HabitModel {
     }
 
 
-    static deleteHabit = (habitId) => {
+    static deleteHabit = (habitId, userId) => {
         const token = localStorage.getItem('token');
-        return fetch(`${url}/${habitId}`, {
+        return fetch(`${url}/${userId}/${habitId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

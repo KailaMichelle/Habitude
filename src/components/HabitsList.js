@@ -1,10 +1,8 @@
 import React from 'react';
 import Habit from './Habit';
-import Profile from '../Profile/Profile';
-import './HikesList.css';
 
 function HabitsList(props) {
-    console.log(`This is the props in HikeList: `, props)
+    console.log(`This is the props in HabitsList: `, props)
     const habitsList = props.habits.filter(habitObj => habitObj.author === props.currentUser
     ).map(aHabit => {
         return(
@@ -18,9 +16,18 @@ function HabitsList(props) {
         )
     })
     return (
-      <div className="profile-container">
-         HABITS LIST
-      </div>
+        <div className="profile-container">
+        <div className="profile-wrap">
+          <div className="habits-container">
+                  
+                <div className="list-container">
+                    Habits List:
+                    {habitsList}
+                </div>
+        
+          </div>
+        </div>
+    </div>
     );
 }
 

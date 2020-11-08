@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout }) => {
     console.log(`THIS IS CURRENT USER ID FROM NAV: `, currentUser)
@@ -13,7 +13,6 @@ const NavBar = ({ currentUser, logout }) => {
                         {/* <NavLink className='nav-link' to={`/api/users/${currentUser.id}`}>Profile</NavLink> */}
                         {/* <NavLink className='nav-link' to={`/api/users/${currentUser.id}`}>Profile</NavLink> */}
 
-
                         <NavLink to={{
                         pathname: `/api/users/${currentUser}`,
                         aboutProps: {
@@ -21,6 +20,8 @@ const NavBar = ({ currentUser, logout }) => {
                             currentUser: currentUser
                         }
                     }}>Profile </NavLink>
+
+                    <NavLink exact to='/habits/new'>New Habit</NavLink>
                         
                     </React.Fragment>
                 )}

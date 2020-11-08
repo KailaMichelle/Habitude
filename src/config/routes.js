@@ -5,6 +5,7 @@ import Login from '../components/Auth/Login';
 import Signup from '../components/Auth/Signup';
 // import Profile from '../components/Profile'
 import UserContainer from '../containers/UserContainer';
+import NewHabitContainer from '../containers/NewHabitContainer';
 
 export default({ currentUser, setCurrentUser }) => (
     <Switch>
@@ -16,16 +17,16 @@ export default({ currentUser, setCurrentUser }) => (
         <Route path='/signup' render={() => <Signup setCurrentUser={setCurrentUser}/> } />
 
         {/* Profile */}
-        {/* <Route path='/users/:id' render={() =>
-            <Profile setCurrentUser={setCurrentUser} currentUser={currentUser} />
-        }
-        /> */}
         <Route path='/api/users/:id' render={() =>
         <UserContainer currentUser={currentUser}/>
         } />
         
-        {/* <Route path='/api/users/:id' component={<Profile />}
-        /> */}
+        {/* Add New Habit */}
+        <Route path='/habits/new' render={() => 
+            <NewHabitContainer currentUser={currentUser}/>} 
+            />
+        {/* Edit Habit */}
+        {/* <Route path='/habits/:id/edit' component={EditHabitForm} /> */}
 
 
     </Switch>

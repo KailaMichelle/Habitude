@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 class Habit extends Component {
   state = {
-    showReviews: false,
     habit: {},
   };
 

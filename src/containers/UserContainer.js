@@ -1,8 +1,8 @@
 import React, { Component }  from 'react';
 import { withRouter } from  'react-router-dom';
-import axios from 'axios';
 import Profile from '../components/Profile'
 import UserModel from '../models/UserModel';
+import HabitsListContainer from './HabitsListContainer';
 
 class UserContainer extends Component{
 
@@ -48,6 +48,7 @@ class UserContainer extends Component{
         <div>
             Success
             <Profile currentUser={this.state.user}/>
+            <HabitsListContainer currentUser={this.state.user} />
         </div>
 
     )

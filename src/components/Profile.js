@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import UserModel from "../models/UserModel"
 
 const url = `${process.env.REACT_APP_API}/users`
 
@@ -9,7 +7,6 @@ class Profile extends Component {
     profile: {}
   }
   
-
   render() {
     // console.log(`This is props from Profile.js: `, this.props)
     const userData = this.props.currentUser.data
@@ -23,7 +20,7 @@ class Profile extends Component {
             <h1>{this.props.currentUser.name}</h1>
         </div>
     )
-    }
+  }
 }
 
 export default Profile;
