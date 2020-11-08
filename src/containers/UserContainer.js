@@ -47,7 +47,7 @@ class UserContainer extends Component{
     return (
         <div>
             <Profile currentUser={this.state.user}/>
-            {/* <HabitsListContainer currentUser={this.state.user} /> */}
+            <HabitsListContainer currentUser={this.state.user} />
         </div>
 
     )
